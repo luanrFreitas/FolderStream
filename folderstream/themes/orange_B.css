@@ -1,0 +1,14 @@
+/* Orange & Black — Variant B "Soft" */
+[data-theme="orange-b"] {
+  color-scheme: dark;
+  --bg: #1B1611;
+  --bg-elevated: #221C16;
+  --text: #EDE4D9;
+  --text-secondary: #A99A87;
+  --border: #332A21;
+  --accent: #FB923C;
+  --accent-contrast: #1A0D00;
+  --hover: #2E2013;
+  --success: #10B981;
+  --shadow: rgba(0, 0, 0, 0.45);
+}

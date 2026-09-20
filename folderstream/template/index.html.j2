@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ course_title }} — FolderStream</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="notif"></div>
+
+<div id="app">
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      {% if logo_file %}
+      <div style="display:flex;justify-content:center;margin-bottom:12px">
+        <img src="{{ logo_file }}" alt="logo" style="max-width:70%;border-radius:8px">
+      </div>
+      {% endif %}
+      <h1 id="course-title">{{ course_title }}</h1>
+      <input id="search-box" type="search" placeholder="Buscar aula...">
+    </div>
+    <div id="modules"></div>
+    <div id="sidebar-footer">
+      <select id="theme-switcher" aria-label="Tema"></select>
+      <label id="auto-advance-label">
+        <input type="checkbox" id="auto-advance-toggle">
+        Avançar automaticamente ao concluir uma aula
+      </label>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div id="topbar">
+      <button id="btn-toggle-sidebar" class="icon-btn" title="Mostrar/ocultar menu"></button>
+      <h2 id="topbar-title">Selecione uma aula</h2>
+      <div id="stats-bar">
+        <div class="progress-track"><div id="stats-fill" class="progress-fill" style="width:0%"></div></div>
+        <span id="stats-count">0/0 aulas</span>
+        <span id="stats-pct">0%</span>
+        <button id="btn-notes" class="icon-btn" title="Anotações"></button>
+        <button id="btn-pomodoro" class="icon-btn" title="Pomodoro"></button>
+        <button id="btn-settings" class="icon-btn" title="Configurações"></button>
+      </div>
+    </div>
+
+    <div id="player-container">
+      <div class="empty-state"><p>Carregando curso...</p></div>
+    </div>
+
+    <div id="attachments" class="card" style="margin:16px 24px;padding:10px 14px;font-size:13px" hidden></div>
+  </main>
+</div>
+
+<div id="notes-panel" class="floating-panel" hidden>
+  <div class="panel-header">Anotações
+    <button id="btn-close-notes" class="icon-btn"></button>
+  </div>
+  <div class="panel-body">
+    <button id="btn-add-note" class="btn btn-primary" style="margin-bottom:10px;width:100%;justify-content:center"></button>
+    <div id="notes-list"></div>
+  </div>
+</div>
+
+<div id="pomodoro-panel" class="floating-panel" hidden>
+  <div class="panel-header">Pomodoro
+    <button id="btn-close-pomodoro" class="icon-btn"></button>
+  </div>
+  <div class="panel-body">
+    <canvas id="pomo-ring" width="140" height="140"></canvas>
+    <div id="pomo-phase">Foco</div>
+    <div id="pomo-time">25:00</div>
+    <div class="pomo-controls">
+      <button id="btn-pomo-toggle" class="btn btn-primary"></button>
+      <button id="btn-pomo-reset" class="btn"></button>
+    </div>
+    <div style="display:flex;gap:8px;width:100%;font-size:11px;color:var(--text-secondary)">
+      <label style="flex:1">Foco (min)<input id="pomo-work" type="number" min="1" style="width:100%"></label>
+      <label style="flex:1">Pausa curta<input id="pomo-short" type="number" min="1" style="width:100%"></label>
+      <label style="flex:1">Pausa longa<input id="pomo-long" type="number" min="1" style="width:100%"></label>
+    </div>
+  </div>
+</div>
+
+<div id="settings-panel" class="floating-panel" hidden>
+  <div class="panel-header">Configurações
+    <button id="btn-close-settings" class="icon-btn"></button>
+  </div>
+  <div class="panel-body" id="settings-body">
+    <p class="settings-hint">Notas, progresso e preferências deste curso ficam salvos só neste navegador.</p>
+    <button id="btn-export-backup" class="btn"></button>
+    <button id="btn-import-backup" class="btn"></button>
+    <input type="file" id="import-backup-input" accept="application/json" hidden>
+    <hr class="settings-divider">
+    <button id="btn-clear-data" class="btn btn-danger"></button>
+  </div>
+</div>
+
+<div id="note-modal" class="modal-backdrop" hidden>
+  <div class="modal-box">
+    <h3>Nova anotação</h3>
+    <textarea id="note-text" rows="4" placeholder="Escreva sua anotação..."></textarea>
+    <div class="modal-actions">
+      <button id="note-cancel" class="btn">Cancelar</button>
+      <button id="note-save" class="btn btn-primary">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<div id="confirm-delete-modal" class="modal-backdrop" hidden>
+  <div class="modal-box">
+    <h3 id="confirm-delete-title">Excluir anotação?</h3>
+    <p id="confirm-delete-message" style="font-size:13px;color:var(--text-secondary)">Essa ação não pode ser desfeita.</p>
+    <div id="confirm-delete-options" hidden>
+      <label class="modal-checkbox-label">
+        <input type="checkbox" id="confirm-clear-progress">
+        <span>Apagar progresso (aulas concluídas e posição dos vídeos)</span>
+      </label>
+      <label class="modal-checkbox-label">
+        <input type="checkbox" id="confirm-clear-notes">
+        <span>Também apagar todas as anotações</span>
+      </label>
+      <label class="modal-checkbox-label">
+        <input type="checkbox" id="confirm-clear-settings">
+        <span>Também apagar configurações do player (tema, velocidade, avanço automático, Pomodoro)</span>
+      </label>
+    </div>
+    <div class="modal-actions">
+      <button id="confirm-cancel" class="btn">Cancelar</button>
+      <button id="confirm-ok" class="btn btn-primary">Excluir</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

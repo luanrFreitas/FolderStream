@@ -1,0 +1,14 @@
+/* Light — Variant B "Warm" */
+[data-theme="light-b"] {
+  color-scheme: light;
+  --bg: #FFFDF9;
+  --bg-elevated: #FFFFFF;
+  --text: #221D17;
+  --text-secondary: #8A7F6E;
+  --border: #EDE6D9;
+  --accent: #D97706;
+  --accent-contrast: #FFFFFF;
+  --hover: #FEF3E2;
+  --success: #10B981;
+  --shadow: rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,14 @@
+/* Blue — Variant B "Light Blue" */
+[data-theme="blue-b"] {
+  color-scheme: light;
+  --bg: #F4F8FC;
+  --bg-elevated: #FFFFFF;
+  --text: #0F2138;
+  --text-secondary: #5B7A99;
+  --border: #DCE9F5;
+  --accent: #1D4ED8;
+  --accent-contrast: #FFFFFF;
+  --hover: #E7F0FC;
+  --success: #10B981;
+  --shadow: rgba(0, 0, 0, 0.08);
+}

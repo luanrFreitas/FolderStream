@@ -1,0 +1,14 @@
+/* Orange & Black — Variant A "High Contrast" */
+[data-theme="orange-a"] {
+  color-scheme: dark;
+  --bg: #121212;
+  --bg-elevated: #1A1A1A;
+  --text: #F5F5F5;
+  --text-secondary: #B0B0B0;
+  --border: #2B2B2B;
+  --accent: #F97316;
+  --accent-contrast: #1A0D00;
+  --hover: #2A1B0F;
+  --success: #10B981;
+  --shadow: rgba(0, 0, 0, 0.45);
+}

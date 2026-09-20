@@ -1,0 +1,105 @@
+# ==========================================
+# Python: Caches e Byte-compiled
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# ==========================================
+# Python: Ambientes Virtuais
+# ==========================================
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# ==========================================
+# Python: Distribuição e Empacotamento
+# ==========================================
+build/
+dist/
+*.egg-info/
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==========================================
+# Python: Testes e Cobertura
+# ==========================================
+.pytest_cache/
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+cover/
+
+# ==========================================
+# C extensions
+# ==========================================
+*.so
+
+# ==========================================
+# PyInstaller
+# ==========================================
+*.manifest
+*.spec
+
+# ==========================================
+# Logs e Bancos de Dados locais
+# ==========================================
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+db.sqlite3
+db.sqlite3-journal
+
+# ==========================================
+# Ferramentas de Tipagem e Lint
+# ==========================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# ==========================================
+# Jupyter Notebook / IPython
+# ==========================================
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# ==========================================
+# IDEs e Sistemas Operacionais
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+graphify-out/
+.claude/
+.gitattributes
+CLAUDE.md

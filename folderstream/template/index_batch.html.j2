@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Índice de Cursos — FolderStream</title>
+<style>
+  :root { --bg:#0F1115; --card:#15181D; --text:#E8E9EB; --muted:#9AA0A6; --border:#23262C; --accent:#60A5FA; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, Arial, sans-serif; padding: 32px 24px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: var(--muted); font-size: 13px; margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  a.card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; color: var(--text); text-decoration: none; transition: border-color .15s ease; }
+  a.card:hover { border-color: var(--accent); }
+  a.card .name { font-weight: 600; font-size: 14px; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  a.card .path { font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .empty { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<h1>Índice de Cursos</h1>
+<p class="subtitle">{{ courses|length }} curso(s) com FolderStream gerado</p>
+{% if courses %}
+<div class="grid">
+{% for c in courses %}
+  <a class="card" href="{{ c.href }}">
+    <div class="name">{{ c.name }}</div>
+    <div class="path">{{ c.folder }}</div>
+  </a>
+{% endfor %}
+</div>
+{% else %}
+<p class="empty">Nenhum curso encontrado nesta pasta.</p>
+{% endif %}
+</body>
+</html>

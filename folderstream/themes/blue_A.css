@@ -1,0 +1,14 @@
+/* Blue (Blue Tech) — Variant A "Corporate" */
+[data-theme="blue-a"] {
+  color-scheme: dark;
+  --bg: #0B1220;
+  --bg-elevated: #0E1729;
+  --text: #E6EDF7;
+  --text-secondary: #8DA2C0;
+  --border: #1E2A3F;
+  --accent: #3B82F6;
+  --accent-contrast: #FFFFFF;
+  --hover: #16233A;
+  --success: #10B981;
+  --shadow: rgba(0, 0, 0, 0.4);
+}

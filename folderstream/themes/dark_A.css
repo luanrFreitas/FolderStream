@@ -1,0 +1,14 @@
+/* Dark — Variant A "Slate" */
+[data-theme="dark-a"] {
+  color-scheme: dark;
+  --bg: #0F1115;
+  --bg-elevated: #15181D;
+  --text: #E8E9EB;
+  --text-secondary: #9AA0A6;
+  --border: #23262C;
+  --accent: #60A5FA;
+  --accent-contrast: #0B1220;
+  --hover: #1C2430;
+  --success: #10B981;
+  --shadow: rgba(0, 0, 0, 0.35);
+}

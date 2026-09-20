@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "folderstream"
+dynamic = ["version"]
+description = "Turn a folder of downloaded course videos into an offline, self-contained web player."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "Luan Freitas", email = "luan.lrf@gmail.com" }]
+keywords = ["course", "video", "player", "offline", "study", "generator"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Education",
+    "Topic :: Multimedia :: Video",
+]
+dependencies = ["jinja2>=3.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+folderstream = "folderstream.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/luanrFreitas/FolderStream"
+Issues = "https://github.com/luanrFreitas/FolderStream/issues"
+Source = "https://github.com/luanrFreitas/FolderStream"
+
+[tool.setuptools.dynamic]
+version = { attr = "folderstream.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["folderstream*"]
+
+[tool.setuptools.package-data]
+folderstream = ["template/*", "themes/*.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

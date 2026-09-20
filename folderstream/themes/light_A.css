@@ -1,0 +1,14 @@
+/* Light — Variant A "Neutral" */
+[data-theme="light-a"] {
+  color-scheme: light;
+  --bg: #FAFAFA;
+  --bg-elevated: #FFFFFF;
+  --text: #1A1A1A;
+  --text-secondary: #6B7280;
+  --border: #E5E7EB;
+  --accent: #2563EB;
+  --accent-contrast: #FFFFFF;
+  --hover: #EFF6FF;
+  --success: #10B981;
+  --shadow: rgba(0, 0, 0, 0.08);
+}

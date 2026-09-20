@@ -1,0 +1,14 @@
+/* Dark — Variant B "Carbon" */
+[data-theme="dark-b"] {
+  color-scheme: dark;
+  --bg: #000000;
+  --bg-elevated: #0A0A0A;
+  --text: #F2F2F2;
+  --text-secondary: #8C8C8C;
+  --border: #1F1F1F;
+  --accent: #22D3EE;
+  --accent-contrast: #001014;
+  --hover: #111827;
+  --success: #10B981;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
