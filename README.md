@@ -91,7 +91,21 @@ pip install folderstream
 
 Se o comando `folderstream` não for encontrado (comum no Windows quando a pasta `Scripts` do Python não está no PATH), use `python -m folderstream` no lugar.
 
-Para atualizar: `pipx upgrade folderstream` (ou `pip install -U folderstream`).
+### Atualização
+
+```bash
+# se instalou com pipx
+pipx upgrade folderstream
+
+# se instalou com pip
+pip install -U folderstream
+```
+
+As melhorias valem para cursos gerados **depois** da atualização. Para aplicar a versão nova num curso que você já gerou, rode de novo com `--force` — o progresso e as notas salvos são mantidos:
+
+```bash
+folderstream "caminho/do/curso" --force
+```
 
 <details>
 <summary>Instalar a partir do código-fonte</summary>
@@ -161,8 +175,6 @@ scanner  →  manifest  →  builder  →  FolderStream/
 - **`folderstream/manifest.py`** monta o manifest e gerencia o `.course_id` (persistente entre regenerações, para não perder progresso salvo no navegador).
 - **`folderstream/builder.py`** junta os 8 temas CSS (`folderstream/themes/`), injeta os dados do curso no motor JS (`folderstream/template/player.js`) e renderiza o HTML final via Jinja2.
 - **`folderstream/template/player.js`** é o app inteiro do lado do cliente — JS puro, sem framework, sem build step.
-
-Detalhes completos de decisões de design estão em [`PRD.md`](./PRD.md), e convenções internas para quem for contribuir estão em [`CLAUDE.md`](./CLAUDE.md).
 
 ## Roadmap
 

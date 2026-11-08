@@ -344,6 +344,14 @@ function openLesson(lesson) {
   if (!completable && !viewerFile) return;
   currentFileId = completable ? completable.id : null;
   setUiState({ lastFileId: currentFileId });
+  if (completable && completable.kind !== "video") {
+    // conteúdo que não é vídeo não tem "fim": abrir já conta como concluído.
+    const set = getCompletedSet();
+    if (!set.has(completable.id)) {
+      set.add(completable.id);
+      saveCompletedSet(set);
+    }
+  }
   document.getElementById("topbar-title").textContent = lesson.name;
   renderAttachments(lesson, viewerFile);
   renderViewer(viewerFile);
